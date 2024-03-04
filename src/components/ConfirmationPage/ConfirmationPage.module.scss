@@ -1,0 +1,50 @@
+.confirmationPage {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .confirmation {
+    position: relative;
+    text-align: center;
+    min-height: 8rem;
+    max-width: 400px;
+    background-color: white;
+    padding: 2rem;
+    margin: 0 1rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+
+    p {
+      margin: 0.5rem 0;
+    }
+
+    button {
+      position: absolute;
+      bottom: -5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 5rem;
+      width: 5rem;
+      border: none;
+      outline: none;
+      background: none;
+      padding: 0;
+
+      svg {
+        width: 100%;
+        height: 100%;
+        fill: white;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
