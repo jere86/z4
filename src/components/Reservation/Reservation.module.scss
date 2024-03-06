@@ -14,8 +14,14 @@
     }
   }
 
-  .pickADate {
-    font-size: 0.55rem;
-    font-weight: bold;
+  .priceRange {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .pickADate {
+      font-size: 0.55rem;
+      font-weight: bold;
+    }
   }
 }

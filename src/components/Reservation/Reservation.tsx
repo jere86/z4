@@ -138,7 +138,7 @@ const Reservation: React.FC<ReservationProps> = ({
           onReturn={handleReturn}
         />
       ) : (
-        <>
+        <div className={styles.priceRange}>
           {selectedDates.intervalStart !== "" &&
           selectedDates.intervalEnd !== "" ? (
             <>
@@ -151,6 +151,13 @@ const Reservation: React.FC<ReservationProps> = ({
               >
                 REZERVIRAJ
               </button>
+            </>
+          ) : accommodation.pricelistInEuros.length === 1 ? (
+            <>
+              <p>
+                Cijena ovog smještaja je{" "}
+                <b>{accommodation.pricelistInEuros[0].pricePerNight}€</b>
+              </p>
             </>
           ) : (
             <>
@@ -180,7 +187,7 @@ const Reservation: React.FC<ReservationProps> = ({
               </p>
             </>
           )}
-        </>
+        </div>
       )}
     </div>
   );

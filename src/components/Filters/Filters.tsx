@@ -100,24 +100,27 @@ const Filters: React.FC<FiltersProps> = ({
             minDate={new Date()}
             maxDate={
               filters.endDate
-                ? new Date(filters.endDate)
+                ? new Date(new Date(filters.endDate).getTime() - 86400000)
                 : new Date("2024-12-31")
             }
             dateFormat="yyyy-MM-dd"
+            shouldCloseOnSelect={true}
             customInput={<CalendarInput date={true} />}
           />
         </label>
-
         <label className={styles.dateLabel}>
           Datum odlaska:
           <DatePicker
             selected={filters.endDate ? new Date(filters.endDate) : null}
             onChange={handleEndDateChange}
             minDate={
-              filters.startDate ? new Date(filters.startDate) : new Date()
+              filters.startDate
+                ? new Date(new Date(filters.startDate).getTime() + 86400000)
+                : new Date(new Date().getTime() + 86400000)
             }
             maxDate={new Date("2024-12-31")}
             dateFormat="yyyy-MM-dd"
+            shouldCloseOnSelect={true}
             customInput={<CalendarInput date={false} />}
           />
         </label>

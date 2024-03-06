@@ -73,9 +73,9 @@ const Accommodation: React.FC<AccommodationProps> = ({
           <ImInfo />
         </button>
         {expanded && (
-          <div className="additional-info">
+          <div className={styles.additionalInfo}>
             {Object.values(accommodation.amenities).some((value) => value) ? (
-              <>
+              <div className={styles.amenities}>
                 <h3>Dodatne pogodnosti:</h3>
                 <ul>
                   {Object.entries(accommodation.amenities).map(
@@ -89,9 +89,11 @@ const Accommodation: React.FC<AccommodationProps> = ({
                       )
                   )}
                 </ul>
-              </>
+              </div>
             ) : (
-              <h3>Nema dodatnih pogodnosti.</h3>
+              <div className={styles.amenities}>
+                <h3>Nema dodatnih pogodnosti.</h3>
+              </div>
             )}
             <h3>Cijena prema razdoblju:</h3>
             {accommodation.pricelistInEuros.map((pricelist) => (
